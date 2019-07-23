@@ -1,0 +1,230 @@
+{
+    "FORM": {
+        "TABS": {
+	        "ZADANI": "Základní údaje",
+	        "SROVNANI": "Srovnání",
+	        "ZASTAVA": "Zástava",
+	        "OSOBNI": "Příjmy",
+	        "KONTAKT": "Kontakt"
+		},
+        "BUTTONS": {     
+	        "KONTAKT": "Mám zájem",
+			"SLEVA": "Chci slevu",	        
+	        "ZPET": "Zpět",
+	        "DALE": "Přepočítat",
+	        "PZASTAVU": "Přidat zástavu",
+	        "PZADATELE": "Přidat žadatele",
+	        "PDITE": "Přidat dítě",
+	        "NVHELP": "Vyřešit",
+	        "ODESLAT": "Odeslat",
+	        "OSOBNI": {
+	        	"TITLE": "Mám na to?",
+	        	"HINT": "Ověřte, že posuzovaní žadatelé o úvěr mají dostatečný rozdíl mezi příjmy a výdaji."
+	        },
+	        "UDAJE": {
+	        	"TITLE": "Mám dost zástavy?",
+	        	"HINT": "Můžete za poskytnutý hypoteční úvěr ručit dostatečně vysokou zástavou, případně máte ručitele?"
+	        },
+			"SROVNAT": "Srovnat nabídky",
+			"OFFERS_PDF": "Stáhnout v PDF",
+			"SDILENI": "Sdílet/uložit odkaz na tuto kalkulaci",
+			"EMAIL": "Zaslat na email",
+			"NOVA": "Nová kalkulace",
+			"NOVATIP": "Vyresetuje formulář pro novou kalkulaci"			
+		},
+		"SELECT" : {
+	        "DEFAULT": "Vyberte prosím z nabídky",
+	        "SEARCHTEXT": "Napište pár znaků...",
+	        "NOTFOUND": "Žádná položka"	        
+		},
+        "VALIDATION" : {
+	        "REQUIRED": "Vyplňte prosím toto pole.",
+	        "RADIOREQUIRED": "Vyberte prosím jednu z voleb.",
+	        "MAX": "Maximální hodnota je {{value}}.",
+	        "MIN": "Minimální hodnota je {{value}}.",
+			"RANGE": "Povolená hodnota je {{min}} - {{max}}.",
+			"EMAIL": "Zadejte prosím platnou emailovou adresu."
+		},
+        "ANO": "Ano",
+        "NE": "Ne",
+        "KC": "Kč",
+        "LET": "let",
+        "FIX": "{{fix}}"        
+    },
+    "ZADANI": {
+    	"CLAIM": "Najdeme Vám nejvýhodnější hypotéku",
+        "UCEL": {    
+	        "TITLE": "Účel Vaší hypotéky?",
+	        "NOVA": "Nová hypotéka",
+	        "REFI": "Refinancování",
+	        "AMER": "Americká hypotéka"
+		}
+	},
+    "MODAL": {   
+        "SDILENI": {
+			"TITLE": "Sdílejte srovnání hypoték",
+			"PLACEHOLDER": "Odkaz na tuto kalkulaci",
+			"TEXT": "Zkopírujte si odkaz na toto srovnání hypoték, abyste jej mohli snadno sdílet s&nbsp;ostatními nebo&nbsp;se&nbsp;k&nbsp;němu později sami vrátit."
+		},
+        "EMAIL": {
+			"TITLE": "Srovnání hypoték na email",
+			"LABEL": "Emailová adresa",
+			"PLACEHOLDER": "Vaše emailová adresa",
+			"SEND": "Odeslat",
+			"SENT": "Odesláno na Váš email.",
+			"TEXT": "Pošlete si odkaz na toto srovnání hypoték na Váš email, abyste&nbsp;s&nbsp;k&nbsp;němu mohli později vrátit."
+		}
+    },	
+    "ZAMER": {
+        "UVER": {    
+	        "LABEL": "Výše úvěru",
+	        "HINT": "Kolik si potřebujete vypůjčit?"
+	    },
+        "DOBASPLACENI": {
+	        "LABEL": "Doba splácení",
+	        "HINT": "Délka splácení v letech, v&nbsp;rozmezí 5-30&nbsp;let"
+		},
+        "FIXACE": {
+	        "LABEL": "Fixace",
+	        "HINT": "Délka fixace úrokové sazby v letech: 1&nbsp;rok,&nbsp;3&nbsp;nebo&nbsp;5&nbsp;let"
+		}		
+	},    
+    "SROVNANI": {   
+	    "TITLE": "Srovnání hypoték",
+	    "BACK": "Upravit zadání",
+	    "ALERT": "Srovnání předpokládá optimální výši zabezpečení zástavou a dostatečnou bonitu žadatele. Ověřte:",
+		"NVALERT": "U následujících nabídek není splněna některá z podmínek, Více informací zjistíte po kliknutí na ikonku výstrahy.",	    
+	    "CLOSE": "Zavřít",
+        "PARTNER": "Partner",
+        "KALKULUJI": "Počítám nabídky hypoték. Prosím o chvilku strpení.",
+        "HODNOCENI": {
+        	"TITLE": "Hodnocení",
+        	"HINT": "Hodnocení banky jako celku podle procesů"
+        },        
+        "EFEKTUR": {
+        	"TITLE": "Efektivní sazba",
+        	"HINT": "Čistý úrok, tj. RPSN zohledňující navíc odečet úroků při účelové hypotéce"
+        },
+        "UROKSAZ": {
+        	"TITLE": "Úroková sazba",
+        	"HINT": "Garantovaný úrok beze slev, pouze za podmínky vedení běžného účtu"
+        },
+        "SPLATKA": {
+        	"TITLE": "Splátka",
+        	"HINT": ""
+        },
+        "UROK": {
+        	"TITLE": "Z toho úrok",
+        	"HINT": "Úrok v 1. měsíci splátky a klesá v čase"
+        },
+        "PPOPL": {
+        	"TITLE": "Počáteční poplatky",
+        	"HINT": ""
+        },
+        "MPOPL": {
+        	"TITLE": "Měsíční poplatky",
+        	"HINT": ""
+        }        
+    },    
+    "ZASTAVA": {
+    	"TITLE": "Zajištění úvěru<small class=\"text-muted\"> Mám dost zástavy?</small>",
+    	"ZASTAVA": "zástava",
+        "INVESTICE": {
+	        "LABEL": "Celková investice",
+	        "PLACEHOLDER": "",
+	        "HINT": "Kolik bude celý záměr stát?"
+		},
+        "VLPROSTR": {
+	        "LABEL": "Vlastní prostředky",
+	        "PLACEHOLDER": "",
+	        "HINT": "Kolik budu platit z vlastních prostředků? Jedná se o rozdíl mezi \"celkovou investicí\" a \"výši úvěru\"."
+		},
+        "UCEL": {
+	        "LABEL": "Účel",
+			"PLACEHOLDER": "",
+	        "HINT": ""
+		},
+        "TYP": {
+	        "LABEL": "Typ nemovitosti",
+	        "HINT": "Vyberte typ zástavní nemovitosti nebo ručitele."
+		},
+        "REGION": {
+	        "LABEL": "Region/Obec",
+	        "HINT": ""
+		},
+        "PRONAJEM": {
+	        "LABEL": "Pronajímána?",
+	        "HINT": ""
+		},				
+        "ODCENA": {
+	        "LABEL": "Odhadní cena",
+	        "HINT": "Zadejte odhadní cenu zástavní nemovitosti nebo výši ručení v případě ručitele."
+		}												
+    },
+    "OSOBNI": {
+    	"TITLE": "Ověření příjmů<small class=\"text-muted\"> Mám na to?</small>",
+    	"ZADATEL": "žadatel",
+        "TRPOBYT": {    
+	        "LABEL": "Trvalý pobyt v ČR:",
+	        "HINT": ""
+		},
+        "OBCANCR": {    
+	        "LABEL": "Občané ČR:",
+	        "HINT": ""
+		},
+        "PRIJMYCR": {    
+	        "LABEL": "Příjmy v ČR:",
+	        "HINT": ""
+		},
+        "EXEKUCE": {    
+	        "LABEL": "Jsou exekuce či insolvence či trestní stíhání?",
+	        "HINT": ""
+		},
+        "REGISTR": {    
+	        "LABEL": "Existuje negativní záznam v registrech dlužníků?",
+	        "HINT": ""
+		},		
+        "ROKNAR": {
+	        "LABEL": "Rok narození",
+			"PLACEHOLDER": "",
+	        "HINT": ""
+	    },
+		"PRIJMY": {
+	        "LABEL": "Příjmy",
+			"PLACEHOLDER": "",
+	        "HINT": "Měsíční čisté příjmy žadatele"
+		},
+        "VYDAJE": {
+	        "LABEL": "Výdaje",
+			"PLACEHOLDER": "",
+	        "HINT": "Měsíční povinné výdaje žadatele"
+		}		
+    },
+    "KONTAKT": {
+    	"TITLE": "Mám zájem o hypotéku",
+    	"TEXT": "Stačí pouze vyplnit kontaktní údaje do formuláře. Náš specialista Vás bude v co nejkratší době kontaktovat a společně se domluvíte na dalším postupu.",
+    	"MAILSENT": "Děkujeme. Budeme Vás kontaktovat.",
+        "JMENO": {
+	        "LABEL": "Jméno a příjmení",
+			"PLACEHOLDER": "Jméno a příjmení",
+	        "HINT": "Zadejte prosím Vaše celé jméno"
+		},
+        "EMAIL": {
+	        "LABEL": "Email",
+			"PLACEHOLDER": "Email",
+	        "HINT": "Zadejte prosím Vaši emailovou adresu"
+		},
+        "TELEFON": {
+	        "LABEL": "Telefon",
+			"PLACEHOLDER": "Telefon",
+	        "HINT": "Zadejte prosím Vaše telefonní číslo"
+		},
+		"SOUHLAS": {
+	        "LABEL": "Souhlas se <a href=\"https://test.hypozor.cz/other/Informace o zpracování osobních údajů společností Aliance finančních poradců a.s..pdf\" target=\"_blank\">zpracováním osobních údajů</a>",
+	        "REQUIRED": "Bez Vašeho souhlasu se neobejdeme."
+	    },
+		"PREFEREM": {
+	        "LABEL": "Preferuji komunikaci přes email"
+	    }		    	
+    }          
+}

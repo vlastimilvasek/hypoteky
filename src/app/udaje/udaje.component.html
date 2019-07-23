@@ -1,0 +1,200 @@
+<fieldset #zastava id="zastava" ngModelGroup="zastava">
+
+	<div class="row">
+		<div class="{{ layout.grid.column3 }}">
+	
+		    <div class="form-group row">
+				<label class="{{ layout.grid.label3 }} col-form-label"
+					placement="top"
+					triggers="mouseenter:mouseleave"	
+					popover="{{ 'ZASTAVA.INVESTICE.HINT' | translate }}">
+					{{ 'ZASTAVA.INVESTICE.LABEL' | translate }}
+				</label>		
+				<div class="{{ layout.grid.input3 }}">
+			        <div class="input-group">
+				        <input id="ZamerCelkovaInvestice" name="ZamerCelkovaInvestice" class="form-control text-right" type="text" autocomplete="off"
+				          [(ngModel)]="data.Zamer.CelkovaInvestice" #ZamerCelkovaInvestice="ngModel" telefonFormat required />
+				        <div class="input-group-append">
+							<span class="input-group-text">{{ 'FORM.KC' | translate }}</span>
+						</div>
+			        </div>	
+				</div>
+				<small [hidden]="ZamerCelkovaInvestice.valid || (ZamerCelkovaInvestice.pristine && !submitted)" class="text-danger {{ layout.grid.offset3 }} {{ layout.grid.input3 }}">
+					{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+				</small>
+		    </div>  
+			
+		<!-- druhý sloupec -->
+		</div>
+		<div class="{{ layout.grid.column3 }}">
+		
+		    <div class="form-group row">
+				<label class="{{ layout.grid.label3 }} col-form-label"
+					placement="top"
+					triggers="mouseenter:mouseleave"	
+					popover="{{ 'ZASTAVA.VLPROSTR.HINT' | translate }}">
+					{{ 'ZASTAVA.VLPROSTR.LABEL' | translate }}
+				</label>		
+				<div class="{{ layout.grid.input3 }}">
+			        <div class="input-group">
+				        <input id="ZamerVlastniProstredky" name="ZamerVlastniProstredky" class="form-control text-right" type="text" autocomplete="off"
+				          [(ngModel)]="data.Zamer.VlastniProstredky" #ZamerVlastniProstredky="ngModel" telefonFormat required />
+				        <div class="input-group-append">
+							<span class="input-group-text">{{ 'FORM.KC' | translate }}</span>
+						</div>
+			        </div>	
+				</div>
+				<small [hidden]="ZamerVlastniProstredky.valid || (ZamerVlastniProstredky.pristine && !submitted)" class="text-danger {{ layout.grid.offset3 }} {{ layout.grid.input3 }}">
+					{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+				</small>
+		    </div> 
+
+		<!-- třetí sloupec -->
+		</div>
+		<div class="{{ layout.grid.column3 }}">
+
+			<div class="form-group row">
+				<label class="{{ layout.grid.label3 }}  col-form-label"
+					placement="right"
+					triggers="mouseenter:mouseleave"		
+					popover="{{ 'ZASTAVA.UCEL.HINT' | translate }}">
+					{{ 'ZASTAVA.UCEL.LABEL' | translate }}
+				</label>		
+				<div class="{{ layout.grid.input3 }}"> 
+					<ngx-select
+						name = "Ucel" class="" #Ucel="ngModel"
+						placeholder="{{ 'FORM.SELECT.DEFAULT' | translate }}"
+					    [items]="lists.ucel"
+					    [allowClear]="false"
+					    [(ngModel)]="data.Ucel"
+					    required>
+					</ngx-select>			
+				</div>
+				<small [hidden]="Ucel.valid || (Ucel.pristine && !submitted)" class="text-danger {{ layout.grid.offset3 }} {{ layout.grid.input3 }}">
+					{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+				</small>		
+			</div>
+									
+		</div>
+		
+	<!-- // END row -->
+	</div>
+
+	<div *ngIf="data.Zastava?.length<3" class="row mt-4" id="pZastavu">
+		<div class="col">
+		    <button type="button" (click)="pridatZastavu()" class="btn btn-outline-primary"><i class="fa fa-plus"></i> {{ 'FORM.BUTTONS.PZASTAVU' | translate }}</button>
+		</div>
+	</div>
+	
+	<div *ngFor="let item of data.Zastava; let i = index;">
+		<div class="row">
+			<div class="col-9">
+				<h5 class="mt-4">{{ i+1 }}. {{ 'ZASTAVA.ZASTAVA' | translate }}</h5>
+			</div>
+			<div class="col-3 text-right">
+				<button *ngIf="i" type="button" (click)="smazZastavu(i)" class="mt-2 float-right btn btn-outline-primary"><i class="fa fa-times"></i></button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="{{ layout.grid.column }}">
+		
+				<div class="form-group row">
+					<label class="{{ layout.grid.label }}  col-form-label"
+						placement="top"
+						triggers="mouseenter:mouseleave"		
+						popover="{{ 'ZASTAVA.TYP.HINT' | translate }}">
+						{{ 'ZASTAVA.TYP.LABEL' | translate }}
+					</label>		
+					<div class="{{ layout.grid.input }}"> 
+						<ngx-select #itemTyp="ngModel"
+							name = "Zastava[{{i}}].Typ" class=""
+							placeholder="{{ 'FORM.SELECT.DEFAULT' | translate }}"
+						    [items]="lists.zastava_typ"
+						    [allowClear]="false"
+						    [(ngModel)]="item.Typ"
+						    required>
+						</ngx-select>			
+					</div>
+					<small [hidden]="itemTyp.valid || (itemTyp.pristine && !submitted)" class="text-danger {{ layout.grid.offset }} {{ layout.grid.input }}">
+						{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+					</small>							
+				</div> 
+				
+			<!-- druhý sloupec -->
+			</div>
+			<div class="{{ layout.grid.column }}">
+			    <div class="form-group row">
+					<label class="{{ layout.grid.label }} col-form-label"
+						placement="top"
+						triggers="mouseenter:mouseleave"	
+						popover="{{ 'ZASTAVA.ODCENA.HINT' | translate }}">
+						{{ 'ZASTAVA.ODCENA.LABEL' | translate }}
+					</label>		
+					<div class="{{ layout.grid.input }}">
+				        <div class="input-group">
+					        <input id="Zastava[{{i}}].OdhadniCena" name="Zastava[{{i}}].OdhadniCena" class="form-control text-right" type="text" autocomplete="off"
+					          [(ngModel)]="item.OdhadniCena" #itemOdhadniCena="ngModel" telefonFormat required />
+							<div class="input-group-append">
+								<span class="input-group-text">{{ 'FORM.KC' | translate }}</span>
+							</div>
+				        </div>	
+					</div>
+					<small [hidden]="itemOdhadniCena.valid || (itemOdhadniCena.pristine && !submitted)" class="text-danger {{ layout.grid.offset }} {{ layout.grid.input }}">
+						{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+					</small>					
+			    </div>
+			    			
+			</div>
+		</div><!-- // END row -->
+		<div class="row">
+			<div class="{{ layout.grid.column }}">
+			    <div class="form-group row">
+					<label class="{{ layout.grid.label }} col-form-label"
+						placement="top"
+						triggers="mouseenter:mouseleave"	
+						popover="{{ 'ZASTAVA.REGION.HINT' | translate }}">
+						{{ 'ZASTAVA.REGION.LABEL' | translate }}
+					</label>		
+					<div class="{{ layout.grid.input }}">
+				        <div class="input-group">
+					        <input id="Zastava[{{i}}].Region" name="Zastava[{{i}}].Region" class="form-control text-right" type="text" 
+					          [(ngModel)]="item.Region" #itemRegion="ngModel" />
+				        </div>	
+					</div>
+					<small [hidden]="itemRegion.valid || (itemRegion.pristine && !submitted)" class="text-danger {{ layout.grid.offset }} {{ layout.grid.input }}">
+						{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+					</small>					
+			    </div>
+			</div>
+			<!-- druhý sloupec -->
+			<div class="{{ layout.grid.column }}">
+				<div class="form-group row">
+					<label class="{{ layout.grid.label }} col-form-label"
+						placement="right"
+						triggers="mouseenter:mouseleave"	
+						popover="{{ 'ZASTAVA.PRONAJEM.HINT' | translate }}">
+						{{ 'ZASTAVA.PRONAJEM.LABEL' | translate }}
+					</label>
+					<div class="{{ layout.grid.input }}">   		
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+						  <label class="btn btn-outline-primary" [class.active]="item.Pronajimana === 'true'">
+						    <input name="Pronajem" [(ngModel)]="item.Pronajimana" #itemPronajem="ngModel" value='true' type="radio" required />
+						    {{ 'FORM.ANO' | translate }}
+						  </label>
+						  <label class="btn btn-outline-primary" [class.active]="item.Pronajimana === 'false'">
+						    <input name="Pronajem" [(ngModel)]="item.Pronajimana" value='false' type="radio" />
+						    {{ 'FORM.NE' | translate }}
+						  </label>
+						</div>
+						<br /><small [hidden]="itemPronajem.valid || (itemPronajem.pristine && !submitted)" class="text-danger text-center">
+							{{ 'FORM.VALIDATION.RADIOREQUIRED' | translate }}
+						</small>
+					</div>
+				</div>
+			</div>
+
+		</div><!-- // END row -->		
+				
+	</div>	
+
+</fieldset>

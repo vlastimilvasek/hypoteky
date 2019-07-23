@@ -1,0 +1,261 @@
+<fieldset #osobni id="osobni" ngModelGroup="osobni">
+
+	<div class="row">
+		<div class="{{ layout.grid.column2_1 }}">
+
+			<div class="form-group row">
+				<label class="{{ layout.grid.label2_1 }} col-form-label"
+					placement="right"
+					triggers="mouseenter:mouseleave"	
+					popover="{{ 'OSOBNI.TRPOBYT.HINT' | translate }}">
+					{{ 'OSOBNI.TRPOBYT.LABEL' | translate }}
+				</label>
+				<div class="{{ layout.grid.input2_1 }}">   		
+					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+					  <label class="btn btn-sm btn-outline-primary" [class.active]="data.TrvalyPobytCR === 'true'">
+					    <input name="TrvalyPobytCR" [(ngModel)]="data.TrvalyPobytCR" #TrvalyPobytCR="ngModel" value='true' type="radio" required />
+					    {{ 'FORM.ANO' | translate }}
+					  </label>
+					  <label class="btn btn-sm btn-outline-primary" [class.active]="data.TrvalyPobytCR === 'false'">
+					    <input name="TrvalyPobytCR" [(ngModel)]="data.TrvalyPobytCR" value='false' type="radio" />
+					    {{ 'FORM.NE' | translate }}
+					  </label>
+					</div>
+					<br /><small [hidden]="TrvalyPobytCR.valid || (TrvalyPobytCR.pristine && !submitted)" class="text-danger text-center">
+						{{ 'FORM.VALIDATION.RADIOREQUIRED' | translate }}
+					</small>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="{{ layout.grid.label2_1 }} col-form-label"
+					placement="right"
+					triggers="mouseenter:mouseleave"	
+					popover="{{ 'OSOBNI.OBCANCR.HINT' | translate }}">
+					{{ 'OSOBNI.OBCANCR.LABEL' | translate }}
+				</label>
+				<div class="{{ layout.grid.input2_1 }}">   		
+					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+					  <label class="btn btn-sm btn-outline-primary" [class.active]="data.ObcaneCR === 'true'">
+					    <input name="ObcaneCR" [(ngModel)]="data.ObcaneCR" #ObcaneCR="ngModel" value='true' type="radio" required />
+					    {{ 'FORM.ANO' | translate }}
+					  </label>
+					  <label class="btn btn-sm btn-outline-primary" [class.active]="data.ObcaneCR === 'false'">
+					    <input name="ObcaneCR" [(ngModel)]="data.ObcaneCR" value='false' type="radio" />
+					    {{ 'FORM.NE' | translate }}
+					  </label>
+					</div>
+					<br /><small [hidden]="ObcaneCR.valid || (ObcaneCR.pristine && !submitted)" class="text-danger text-center">
+						{{ 'FORM.VALIDATION.RADIOREQUIRED' | translate }}
+					</small>
+				</div>
+			</div>			
+
+			<div class="form-group row">
+				<label class="{{ layout.grid.label2_1 }} col-form-label"
+					placement="right"
+					triggers="mouseenter:mouseleave"	
+					popover="{{ 'OSOBNI.PRIJMYCR.HINT' | translate }}">
+					{{ 'OSOBNI.PRIJMYCR.LABEL' | translate }}
+				</label>
+				<div class="{{ layout.grid.input2_1 }}">   		
+					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+					  <label class="btn btn-sm btn-outline-primary" [class.active]="data.PrijmyCR === 'true'">
+					    <input name="PrijmyCR" [(ngModel)]="data.PrijmyCR" #PrijmyCR="ngModel" value='true' type="radio" required />
+					    {{ 'FORM.ANO' | translate }}
+					  </label>
+					  <label class="btn btn-sm btn-outline-primary" [class.active]="data.PrijmyCR === 'false'">
+					    <input name="PrijmyCR" [(ngModel)]="data.PrijmyCR" value='false' type="radio" />
+					    {{ 'FORM.NE' | translate }}
+					  </label>
+					</div>
+					<br /><small [hidden]="PrijmyCR.valid || (PrijmyCR.pristine && !submitted)" class="text-danger text-center">
+						{{ 'FORM.VALIDATION.RADIOREQUIRED' | translate }}
+					</small>
+				</div>
+			</div>	
+	
+		</div>			
+		<!-- druhý sloupec -->
+		<div class="{{ layout.grid.column2_2 }}">
+		
+			<div class="form-group row">
+				<label class="{{ layout.grid.label2_1 }} col-form-label"
+					placement="right"
+					triggers="mouseenter:mouseleave"	
+					popover="{{ 'OSOBNI.EXEKUCE.HINT' | translate }}">
+					{{ 'OSOBNI.EXEKUCE.LABEL' | translate }}
+				</label>
+				<div class="{{ layout.grid.input2_1 }}">   		
+					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+					  <label class="btn btn-sm btn-outline-primary" [class.active]="data.Exekuce === 'true'">
+					    <input name="Exekuce" [(ngModel)]="data.Exekuce" #Exekuce="ngModel" value='true' type="radio" required />
+					    {{ 'FORM.ANO' | translate }}
+					  </label>
+					  <label class="btn btn-sm btn-outline-primary" [class.active]="data.Exekuce === 'false'">
+					    <input name="Exekuce" [(ngModel)]="data.Exekuce" value='false' type="radio" />
+					    {{ 'FORM.NE' | translate }}
+					  </label>
+					</div>
+					<br /><small [hidden]="Exekuce.valid || (Exekuce.pristine && !submitted)" class="text-danger text-center">
+						{{ 'FORM.VALIDATION.RADIOREQUIRED' | translate }}
+					</small>
+				</div>
+			</div>
+		
+			<div class="form-group row">
+				<label class="{{ layout.grid.label2_1 }} col-form-label"
+					placement="right"
+					triggers="mouseenter:mouseleave"	
+					popover="{{ 'OSOBNI.REGISTR.HINT' | translate }}">
+					{{ 'OSOBNI.REGISTR.LABEL' | translate }}
+				</label>
+				<div class="{{ layout.grid.input2_1 }}">   		
+					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+					  <label class="btn btn-sm btn-outline-primary" [class.active]="data.NegativniZaznamRegistrDluzniku === 'true'">
+					    <input name="NegativniZaznamRegistrDluzniku" [(ngModel)]="data.NegativniZaznamRegistrDluzniku" #NegativniZaznamRegistrDluzniku="ngModel" value='true' type="radio" required />
+					    {{ 'FORM.ANO' | translate }}
+					  </label>
+					  <label class="btn btn-sm btn-outline-primary" [class.active]="data.NegativniZaznamRegistrDluzniku === 'false'">
+					    <input name="NegativniZaznamRegistrDluzniku" [(ngModel)]="data.NegativniZaznamRegistrDluzniku" value='false' type="radio" />
+					    {{ 'FORM.NE' | translate }}
+					  </label>
+					</div>
+					<br /><small [hidden]="NegativniZaznamRegistrDluzniku.valid || (NegativniZaznamRegistrDluzniku.pristine && !submitted)" class="text-danger text-center">
+						{{ 'FORM.VALIDATION.RADIOREQUIRED' | translate }}
+					</small>
+				</div>
+			</div>
+					
+		</div>	
+	</div><!-- // END row -->
+
+	<!-- ZADATELE -->
+	<div *ngIf="data.Zadatele?.length<5" class="row mt-4" id="pZadatele">
+		<div class="col">
+		    <button type="button" (click)="pridatZadatele()" class="btn btn-outline-primary"><i class="fa fa-plus"></i> {{ 'FORM.BUTTONS.PZADATELE' | translate }}</button>
+		</div>
+	</div>
+	
+	<div *ngFor="let item of data.Zadatele; let i = index;">
+		<div class="row">
+			<div class="col-9">
+				<h5 class="mt-4">{{ i+1 }}. {{ 'OSOBNI.ZADATEL' | translate }}</h5>
+			</div>
+			<div class="col-3 text-right">
+				<button *ngIf="i" type="button" (click)="smazZadatele(i)" class="mt-3 float-right btn btn-outline-primary"><i class="fa fa-times"></i></button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="{{ layout.grid.column3 }}">
+		
+			    <div class="form-group row">
+					<label class="{{ layout.grid.label3 }} col-form-label"
+						placement="top"
+						triggers="mouseenter:mouseleave"	
+						popover="{{ 'OSOBNI.ROKNAR.HINT' | translate }}">
+						{{ 'OSOBNI.ROKNAR.LABEL' | translate }}
+					</label>		
+					<div class="{{ layout.grid.input3 }}">
+				        <div class="input-group">
+					        <input id="Zadatele[{{i}}]RokNarozeni" name="Zadatele[{{i}}]RokNarozeni" class="form-control text-right" type="text" 
+					          [(ngModel)]="item.RokNarozeni" #itemRokNarozeni="ngModel" required />
+				        </div>	
+					</div>
+					<small [hidden]="itemRokNarozeni.valid || (itemRokNarozeni.pristine && !submitted)" class="text-danger {{ layout.grid.offset3 }} {{ layout.grid.input3 }}">
+						{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+					</small>
+			    </div>  
+				
+			<!-- druhý sloupec -->
+			</div>
+			<div class="{{ layout.grid.column3 }}">
+			
+			    <div class="form-group row">
+					<label class="{{ layout.grid.label3 }} col-form-label"
+						placement="top"
+						triggers="mouseenter:mouseleave"	
+						popover="{{ 'OSOBNI.PRIJMY.HINT' | translate }}">
+						{{ 'OSOBNI.PRIJMY.LABEL' | translate }}
+					</label>		
+					<div class="{{ layout.grid.input3 }}">
+				        <div class="input-group">
+					        <input id="Zadatele[{{i}}]Prijmy" name="Zadatele[{{i}}]Prijmy" class="form-control text-right" type="text" autocomplete="off"
+					          [(ngModel)]="item.Prijmy" #itemPrijmy="ngModel" telefonFormat required />
+							<div class="input-group-append">
+								<span class="input-group-text">{{ 'FORM.KC' | translate }}</span>
+							</div>
+				        </div>	
+					</div>
+					<small [hidden]="itemPrijmy.valid || (itemPrijmy.pristine && !submitted)" class="text-danger {{ layout.grid.offset3 }} {{ layout.grid.input3 }}">
+						{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+					</small>
+			    </div> 
+	
+			<!-- třetí sloupec -->
+			</div>
+			<div class="{{ layout.grid.column3 }}">
+	
+			    <div class="form-group row">
+					<label class="{{ layout.grid.label3 }} col-form-label"
+						placement="top"
+						triggers="mouseenter:mouseleave"	
+						popover="{{ 'OSOBNI.VYDAJE.HINT' | translate }}">
+						{{ 'OSOBNI.VYDAJE.LABEL' | translate }}
+					</label>		
+					<div class="{{ layout.grid.input3 }}">
+				        <div class="input-group">
+					        <input id="Zadatele[{{i}}]Vydaje" name="Zadatele[{{i}}]Vydaje" class="form-control text-right" type="text" autocomplete="off"
+					          [(ngModel)]="item.Vydaje" #itemVydaje="ngModel" telefonFormat required />
+							<div class="input-group-append">
+								<span class="input-group-text">{{ 'FORM.KC' | translate }}</span>
+							</div>
+				        </div>	
+					</div>
+					<small [hidden]="itemVydaje.valid || (itemVydaje.pristine && !submitted)" class="text-danger {{ layout.grid.offset3 }} {{ layout.grid.input3 }}">
+						{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+					</small>
+			    </div> 
+									
+			</div>
+
+		</div><!-- // END row -->	
+				
+	</div>	
+
+	<!-- DETI -->
+
+	<div *ngIf="data.RokNarozeniDeti?.length<6" class="row mt-4" id="pDite">
+		<div class="col">
+		    <button type="button" (click)="pridatDite()" class="btn btn-outline-primary"><i class="fa fa-plus"></i> {{ 'FORM.BUTTONS.PDITE' | translate }}</button>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div *ngFor="let item of data.RokNarozeniDeti; let i = index;" class="{{ layout.grid.column3 }}">
+	
+		    <div class="form-group row">
+				<label class="{{ layout.grid.label4 }} col-form-label"
+					placement="top"
+					triggers="mouseenter:mouseleave"	
+					popover="{{ 'OSOBNI.ROKNAR.HINT' | translate }}">
+					{{ 'OSOBNI.ROKNAR.LABEL' | translate }}
+				</label>		
+				<div class="{{ layout.grid.input4 }}">
+			        <div class="input-group">
+				        <input id="RokNarozeniDeti[{{i}}]" name="RokNarozeniDeti[{{i}}]" class="form-control text-right" type="text" 
+				          [(ngModel)]="item.rok" #itemRokNarozeniDeti="ngModel" required />
+			        </div>	
+				</div>
+				<div class="{{ layout.grid.add4 }} text-right">
+					<button type="button" (click)="smazDite(i)" class="float-right btn btn-outline-primary"><i class="fa fa-times"></i></button>
+				</div>
+				<small [hidden]="itemRokNarozeniDeti.valid || (itemRokNarozeniDeti.pristine && !submitted)" class="text-danger {{ layout.grid.offset4 }}">
+					{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+				</small>
+		    </div>  
+				
+		</div>
+	</div>
+
+</fieldset>

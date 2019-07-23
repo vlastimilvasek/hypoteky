@@ -1,0 +1,183 @@
+<div id="srovnani">
+<div class="row">
+	<div class="col">
+
+		<!-- šablona hypoteky : detail -->
+		<div [@list]="offers.length" *ngIf="!layout.table">
+
+		</div>
+		
+		<!-- šablona hypoteky : tabulka validní -->
+		<div *ngIf="offers.length">
+		
+		<div [@list]="offers.length" *ngIf="layout.table" class="card table">
+			<div class="card-header">
+				<div class="row align-items-center">
+					<div class="col-6 col-lg-3 pl-0 pr-0 row hidden-md-down">
+						<div class="col-12 col-sm-6">{{ 'SROVNANI.PARTNER' | translate }}</div>
+						<div class="col-12 col-sm-6">
+						<span placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.HODNOCENI.HINT' | translate }}">
+							{{ 'SROVNANI.HODNOCENI.TITLE' | translate }}</span>
+						</div>
+					</div>
+					<div class="col-12 col-lg-7 order-3 order-lg-2 pl-0 pr-0 row">
+						<div class="col text-center"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.EFEKTUR.HINT' | translate }}">
+							{{ 'SROVNANI.EFEKTUR.TITLE' | translate }}</div>
+						<div class="col text-center"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.UROKSAZ.HINT' | translate }}">
+							{{ 'SROVNANI.UROKSAZ.TITLE' | translate }}</div>
+						<div class="col text-right"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.SPLATKA.HINT' | translate }}">
+							{{ 'SROVNANI.SPLATKA.TITLE' | translate }}</div>
+						<div class="col text-right"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.UROK.HINT' | translate }}">
+							{{ 'SROVNANI.UROK.TITLE' | translate }}</div>
+						<div class="col hidden-sm-down text-right"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.PPOPL.HINT' | translate }}">
+							{{ 'SROVNANI.PPOPL.TITLE' | translate }}</div>
+						<div class="col text-right"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.MPOPL.HINT' | translate }}">
+							{{ 'SROVNANI.MPOPL.TITLE' | translate }}</div>							
+					</div>
+					<div class="col-6 col-lg-2 order-2 order-lg-3 pl-0 pr-0 row  hidden-md-down">
+						&nbsp;
+					</div>						
+				</div>
+			</div>
+			<div class="card-body">
+				<div @items *ngFor="let r of offers" class="row partner align-items-center">
+					<div class="col-6 col-lg-3 pl-0 pr-0 row align-items-center">
+						<div class="col-12 col-sm-6"><img src="{{ LOGA[r.nazev] }}" style="max-height:50px;" alt="{{ r.nazev }}" /></div>
+						<div class="col-12 col-sm-6 pr-0"><span placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.HODNOCENI.HINT' | translate }}" [innerHTML]="r.hodnoceni | star"></span>
+						</div>
+					</div>
+					<div class="col-12 col-lg-7 order-3 order-lg-2 pl-0 pr-0 row align-items-center">
+						<div class="col text-center">{{ r.efektivniUrok | procentoFormat }}</div>
+						<div class="col text-center"><span [outerHTML]="r.urok | procentoFormat"></span></div>
+						<div class="col text-right"><span [outerHTML]="r.splatka | menaFormat"></span></div>
+						<div class="col text-right"><span [outerHTML]="r.urokZeSplatky | menaFormat"></span></div>
+						<div class="col hidden-sm-down text-right"><span [outerHTML]="r.poplatekJednorazovy | menaFormat"></span></div>
+						<div class="col text-right"><span [outerHTML]="r.poplatekMesicni | menaFormat"></span></div>
+					</div>								
+					<div class="col-6 col-lg-2 order-2 order-lg-3 pl-0 align-items-center">
+						<div class="float-right">
+							<button class="btn btn-sm btn-outline-info mr-2" (click)="nastavSlevy(r); staticTabs.tabs[4].active = true">
+								<span class="hidden-lg-up"><strong>{{ 'FORM.BUTTONS.SLEVA' | translate }}</strong></span>
+								<span class="icon shape-savings1 hidden-md-down"
+									placement="top"
+									triggers="mouseenter:mouseleave"
+									popover="{{ 'FORM.BUTTONS.SLEVA' | translate }}"></span>
+							</button>
+							<button class="btn btn-sm btn-success" (click)="staticTabs.tabs[4].active = true">
+							{{ 'FORM.BUTTONS.KONTAKT' | translate }}</button>
+						</div>
+					</div>										
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<!-- šablona hypoteky : tabulka nevalidní *ngIf="layout.table"-->
+		<alert *ngIf="nvoffers.length" type="warning" dismissible="false">
+			<i class="fa fa-2x fa-exclamation-triangle"></i>
+			{{ 'SROVNANI.NVALERT' | translate }}
+		</alert>  		
+		<div [@list]="nvoffers.length" *ngIf="nvoffers.length" class="card table">
+			<div class="card-header">
+				<div class="row align-items-center">
+					<div class="col-6 col-lg-3 pl-0 pr-0 row hidden-md-down">
+						<div class="col-12 col-sm-6">{{ 'SROVNANI.PARTNER' | translate }}</div>
+						<div class="col-12 col-sm-6">
+						<span placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.HODNOCENI.HINT' | translate }}">
+							{{ 'SROVNANI.HODNOCENI.TITLE' | translate }}</span>
+						</div>
+					</div>
+					<div class="col-12 col-lg-7 order-3 order-lg-2 pl-0 pr-0 row">
+						<div class="col text-center"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.EFEKTUR.HINT' | translate }}">
+							{{ 'SROVNANI.EFEKTUR.TITLE' | translate }}</div>
+						<div class="col text-center"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.UROKSAZ.HINT' | translate }}">
+							{{ 'SROVNANI.UROKSAZ.TITLE' | translate }}</div>
+						<div class="col text-right"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.SPLATKA.HINT' | translate }}">
+							{{ 'SROVNANI.SPLATKA.TITLE' | translate }}</div>
+						<div class="col text-right"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.UROK.HINT' | translate }}">
+							{{ 'SROVNANI.UROK.TITLE' | translate }}</div>
+						<div class="col hidden-sm-down text-right"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.PPOPL.HINT' | translate }}">
+							{{ 'SROVNANI.PPOPL.TITLE' | translate }}</div>
+						<div class="col text-right"
+							placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.MPOPL.HINT' | translate }}">
+							{{ 'SROVNANI.MPOPL.TITLE' | translate }}</div>							
+					</div>
+					<div class="col-6 col-lg-2 order-2 order-lg-3 pl-0 pr-0 row  hidden-md-down">
+						&nbsp;
+					</div>						
+				</div>
+			</div>
+			<div class="card-body">
+				<div @items *ngFor="let r of nvoffers" class="row partner align-items-center">
+					<div class="col-6 col-lg-3 pl-0 pr-0 row align-items-center">
+						<div class="col-12 col-sm-6"><img src="{{ LOGA[r.nazev] }}" style="max-height:50px;" alt="{{ r.nazev }}" /></div>
+						<div class="col-12 col-sm-6"><span placement="top"
+							triggers="mouseenter:mouseleave"
+							popover="{{ 'SROVNANI.HODNOCENI.HINT' | translate }}" [innerHTML]="r.hodnoceni | star"></span>
+						</div>
+					</div>
+					<div class="col-12 col-lg-7 order-3 order-lg-2 pl-0 pr-0 row align-items-center">
+						<div class="col text-center">{{ r.efektivniUrok | procentoFormat }}</div>
+						<div class="col text-center"><span [outerHTML]="r.urok | procentoFormat"></span></div>
+						<div class="col text-right"><span [outerHTML]="r.splatka | menaFormat"></span></div>
+						<div class="col text-right"><span [outerHTML]="r.urokZeSplatky | menaFormat"></span></div>
+						<div class="col hidden-sm-down text-right"><span [outerHTML]="r.poplatekJednorazovy | menaFormat"></span></div>
+						<div class="col text-right"><span [outerHTML]="r.poplatekMesicni | menaFormat"></span></div>
+					</div>								
+					<div class="col-6 col-lg-2 order-2 order-lg-3 pl-0 align-items-center">
+						<i class="fa fa-2x text-danger fa-exclamation-triangle"
+							placement="left"
+							[outsideClick]="true"
+							popover="{{ r.varovani }}">
+						</i>
+						<button class="float-right btn btn-sm btn-success" (click)="staticTabs.tabs[4].active = true">
+						{{ 'FORM.BUTTONS.NVHELP' | translate }}</button>						
+					</div>										
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+</div>

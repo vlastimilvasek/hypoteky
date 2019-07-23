@@ -1,0 +1,81 @@
+<fieldset #kontakt id="kontakt" ngModelGroup="kontakt">
+
+<div class="" [innerHtml]="layout.kontakt_text | translate"></div>
+
+<div class="form-group row mt-5">
+	<label class="col-2 offset-lg-1 col-form-label text-right"
+		placement="right"
+		triggers="mouseenter:mouseleave"	
+		popover="{{ 'KONTAKT.JMENO.HINT' | translate }}">
+		<i class="fa fa-user"></i>
+	</label>		
+	<div class="col-9 col-lg-7">
+	       <div class="input-group">
+	        <input id="Jmeno" name="Jmeno" class="form-control" type="text"
+	        	placeholder="{{ 'KONTAKT.JMENO.PLACEHOLDER' | translate }}" 
+	        	[(ngModel)]="data.jmeno" #Jmeno="ngModel" required />
+	       </div>	
+	</div>
+	<small [hidden]="Jmeno.valid || (Jmeno.pristine && !submitted)" class="text-danger col offset-2 offset-lg-3">
+		{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+	</small>
+</div>
+<div class="form-group row">
+	<label class="col-2 offset-lg-1 col-form-label text-right"
+		placement="right"
+		triggers="mouseenter:mouseleave"	
+		popover="{{ 'KONTAKT.EMAIL.HINT' | translate }}">
+		<i class="fa fa-envelope"></i>
+	</label>		
+	<div class="col-9 col-lg-7">
+	       <div class="input-group">
+	        <input id="Email" name="Email" class="form-control" type="email"
+	        	placeholder="{{ 'KONTAKT.EMAIL.PLACEHOLDER' | translate }}" 
+	        	[(ngModel)]="data.email" #Email="ngModel" required />
+	       </div>	
+	</div>
+	<small [hidden]="Email.valid || (Email.pristine && !submitted)" class="text-danger col offset-2 offset-lg-3">
+		{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+	</small>
+</div> 
+<div class="form-group row">
+	<label class="col-2 offset-lg-1 col-form-label text-right"
+		placement="right"
+		triggers="mouseenter:mouseleave"	
+		popover="{{ 'KONTAKT.TELEFON.HINT' | translate }}">
+		<i class="fa fa-phone"></i>
+	</label>		
+	<div class="col-9 col-lg-7">
+	       <div class="input-group">
+	        <input id="Telefon" name="Telefon" class="form-control" type="text"
+	        	placeholder="{{ 'KONTAKT.TELEFON.PLACEHOLDER' | translate }}" 
+	        	[(ngModel)]="data.telefon" #Telefon="ngModel" telefonFormat required />
+	       </div>	
+	</div>
+	<small [hidden]="Telefon.valid || (Telefon.pristine && !submitted)" class="text-danger col offset-2 offset-lg-3">
+		{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+	</small>
+</div>
+<div class="form-group row">
+	<div class="col-9 col-lg-7 offset-2 offset-lg-3">
+		<div class="custom-control custom-checkbox">
+			<input class="custom-control-input" id="spoluuc" #Souhlas="ngModel" name="spoluuc" [(ngModel)]="data.spoluuc" value="1" type="checkbox" required />
+			<label class="custom-control-label" for="spoluuc" [innerHtml]="'KONTAKT.SOUHLAS.LABEL' | translate"> 
+			</label>
+		</div>
+	</div>	
+	<small [hidden]="Souhlas.valid || (Souhlas.pristine && !submitted)" class="text-danger col offset-2 offset-lg-3">
+		{{ 'KONTAKT.SOUHLAS.REQUIRED' | translate }}
+	</small>
+</div>
+<div class="form-group row mb-3">
+	<div class="col-9 col-lg-7 offset-2 offset-lg-3">
+		<div class="custom-control custom-checkbox">
+			<input class="custom-control-input" id="Preference" #Preference="ngModel" name="Preference" [(ngModel)]="data.Preference" value="1" type="checkbox" />
+			<label class="custom-control-label" for="Preference" [innerHtml]="'KONTAKT.PREFEREM.LABEL' | translate"> 
+			</label>
+		</div>
+	</div>	
+</div>
+
+</fieldset>
