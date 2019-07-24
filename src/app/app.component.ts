@@ -89,7 +89,7 @@ export class AppComponent implements OnInit {
     @ViewChild('layoutHelper', { static: false }) layout_helper: any;
     @ViewChild('stepTabs', { static: true }) staticTabs: TabsetComponent;
 
-    version = '1.0.1';
+    version = '1.1.0';
     aversion = require('../../package.json').version;
 
     @HostListener('document:keypress', ['$event'])
@@ -167,7 +167,7 @@ export class AppComponent implements OnInit {
             .subscribe( srovnani => {
                 this.srovnani = srovnani;
                 this.data.id = srovnani.id;
-                this.URL.adresa = window.location.origin + window.location.pathname + '/?id=' + srovnani.id;
+                this.URL.adresa = window.location.origin + window.location.pathname + '?id=' + srovnani.id;
 
                 const items = [];
                 const partneri = [];
