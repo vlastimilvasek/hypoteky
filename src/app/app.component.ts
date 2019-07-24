@@ -184,7 +184,7 @@ export class AppComponent implements OnInit {
                 });
 
                 this.filters.partneri = partneri;
-                this.filters.partnobj = JSON.parse(`{"` + partneri.join(`":true,"`) + `":true}`);
+                // this.filters.partnobj = JSON.parse(`{"` + partneri.join(`":true,"`) + `":true}`);
                 items.sort(function(a, b) { return a.efektivniUrok - b.efektivniUrok; });
 
                 this.offers = items.filter( x => x.varovani === 'ok');
