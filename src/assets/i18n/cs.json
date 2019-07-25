@@ -1,7 +1,8 @@
 {
     "FORM": {
         "TABS": {
-	        "ZADANI": "Základní údaje",
+            "ZADANI": "Zadání",
+            "UDAJE": "Základní údaje",
 	        "SROVNANI": "Srovnání",
 	        "ZASTAVA": "Zástava",
 	        "OSOBNI": "Příjmy",

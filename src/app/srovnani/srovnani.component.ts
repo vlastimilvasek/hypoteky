@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter} from '@angular/core';
-import { LOGO_200x100 } from '../../assets/params/loga';
+import { Loga200x100 } from '../../assets/params/loga';
 import { trigger, transition, style, animate, keyframes, query, stagger, animateChild } from '@angular/animations';
 /*
 import * as pdfMake from 'pdfmake/build/pdfmake';
@@ -42,7 +42,7 @@ export class SrovnaniComponent implements OnInit {
     @Input() data;
     @Input() layout;
     @Input() staticTabs;
-    LOGA = LOGO_200x100;
+    LOGA = Loga200x100;
 
     constructor() {
         // pdfMake.vfs = pdfFonts.pdfMake.vfs;

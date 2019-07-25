@@ -21,7 +21,7 @@
 </div>  
 </nav>
 -->
-<div id="app" class="container">
+<div id="app">
 	<br />
 	<div id="layoutHelper" [ngStyle]="{'display': layouthelper}" >
 		<div class="visible-xl text-center alert alert-success" role="alert">Rozlišení XL</div>
@@ -34,21 +34,21 @@
   <tabset #stepTabs type="pills" [justified]="true">
     <tab>
     	<ng-template tabHeading>
-			<span class="nav-desc">{{ 'FORM.TABS.ZADANI' | translate }}</span>
+			<span class="nav-desc"><span class="hidden-xs">{{ 'FORM.TABS.UDAJE' | translate }}</span><span class="visible-xs">{{ 'FORM.TABS.ZADANI' | translate }}</span></span>
 			<span class="nav-number">1</span>
 		</ng-template>
     	<form #f="ngForm" (ngSubmit)="submitForm(f);" novalidate [class.submitted]="f.submitted">
     	<app-zadani [(data)]="data" [layout]="layout" [submitted]="f.submitted" required></app-zadani>
 		<div class="row align-items-center">
-			<div class="{{ layout.grid.z_label }}"></div>  			
-			<div class="col-md-7 col-lg">
+			<div class="col-md-2"></div>  			
+			<div class="col-md-8 text-center">
 				<button type="submit" class="btn btn-success btn-lg mt-4" [ngx-scroll-to]="'app'" [ngx-scroll-to-duration]="200">
 					{{ 'FORM.BUTTONS.SROVNAT' | translate }} 
 					<i class="fa fa-chevron-right" *ngIf="kalk_aktivni === false"></i>
 					<i class="fa fa-spinner fa-spin" *ngIf="kalk_aktivni === true"></i>
 				</button>
 			</div>
-			<div class="col-auto">
+			<div class="col-md-2">
 				<button type="button" class="mt-4 btn btn-sm btn-light float-right"
 				 	[ngx-scroll-to]="'app'" [ngx-scroll-to-duration]="200"
 					placement="top"
@@ -113,8 +113,8 @@
 		</div>
 
 		<alert *ngIf="!kalk_aktivni && (!o.valid || !u.valid)" type="warning" dismissible="false">{{ 'SROVNANI.ALERT' | translate }}
-			<div class="row mt-2 justify-content-center">
-				<div *ngIf="!u.valid" class="col-auto">
+			<div class="row justify-content-center">
+				<div *ngIf="!u.valid" class="col-auto mt-2 pr-0">
 					<button placement="bottom"
 						triggers="mouseenter:mouseleave"
 						popover="{{ 'FORM.BUTTONS.UDAJE.HINT' | translate }}"
@@ -122,7 +122,7 @@
 						{{ 'FORM.BUTTONS.UDAJE.TITLE' | translate }}
 					</button>				
                 </div>
-				<div *ngIf="!o.valid" class="col-auto">
+				<div *ngIf="!o.valid" class="col-auto mt-2 pr-0">
 					<button placement="bottom"
 						triggers="mouseenter:mouseleave"
 						popover="{{ 'FORM.BUTTONS.OSOBNI.HINT' | translate }}"

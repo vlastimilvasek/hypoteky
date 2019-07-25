@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { debounceTime } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
-import { LOGO_200x100 } from '../assets/params/loga';
+import { Loga200x100 } from '../assets/params/loga';
 
 // Data and Service
 import { ISrovnani } from './_interfaces/odpovednost';
@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
       ],
     };
 
-    LOGA = LOGO_200x100;
+    LOGA = Loga200x100;
     URL = { 'adresa' : '' };
     data: any;
     srovnani: ISrovnani;
@@ -89,7 +89,7 @@ export class AppComponent implements OnInit {
     @ViewChild('layoutHelper', { static: false }) layout_helper: any;
     @ViewChild('stepTabs', { static: true }) staticTabs: TabsetComponent;
 
-    version = '1.1.0';
+    version = '1.1.1';
     aversion = require('../../package.json').version;
 
     @HostListener('document:keypress', ['$event'])
@@ -173,23 +173,21 @@ export class AppComponent implements OnInit {
                 const partneri = [];
                 const partnobj = [];
                 const platby = [];
-                let jtext = '';
                 this.srovnani.items.forEach( (x) => {
                     const params = [];
                     if ( partneri.indexOf(x.nazev) === -1 ) {
                         partneri.push( x.nazev );
-                        jtext += `"${x}":"1"`;
                     }
                     items.push( Object.assign({}, x, {key: 'value' }) );
                 });
 
                 this.filters.partneri = partneri;
-                // this.filters.partnobj = JSON.parse(`{"` + partneri.join(`":true,"`) + `":true}`);
                 items.sort(function(a, b) { return a.efektivniUrok - b.efektivniUrok; });
 
                 this.offers = items.filter( x => x.varovani === 'ok');
                 this.nvoffers = items.filter( x => x.varovani !== 'ok');
                 this.kalk_aktivni = false;
+                // console.log('APP kalkuluj: ', this.offers);
             });
     }
 

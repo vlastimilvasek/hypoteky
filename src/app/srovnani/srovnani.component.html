@@ -48,7 +48,7 @@
 							triggers="mouseenter:mouseleave"
 							popover="{{ 'SROVNANI.PPOPL.HINT' | translate }}">
 							{{ 'SROVNANI.PPOPL.TITLE' | translate }}</div>
-						<div class="col text-right"
+						<div class="col hidden-xs text-right"
 							placement="top"
 							triggers="mouseenter:mouseleave"
 							popover="{{ 'SROVNANI.MPOPL.HINT' | translate }}">
@@ -61,9 +61,9 @@
 			</div>
 			<div class="card-body">
 				<div @items *ngFor="let r of offers" class="row partner align-items-center">
-					<div class="col-6 col-lg-3 pl-0 pr-0 row align-items-center">
-						<div class="col-12 col-sm-6"><img src="{{ LOGA[r.nazev] }}" style="max-height:50px;" alt="{{ r.nazev }}" /></div>
-						<div class="col-12 col-sm-6 pr-0"><span placement="top"
+					<div class="col-8 col-sm-7 col-lg-3 pl-0 pr-0 row align-items-center">
+						<div class="col-auto pr-0 col-sm-6"><img src="{{ LOGA[r.nazev] }}" style="max-height:50px;" alt="{{ r.nazev }}" /></div>
+						<div class="col-auto col-sm-6 pr-0"><span placement="top"
 							triggers="mouseenter:mouseleave"
 							popover="{{ 'SROVNANI.HODNOCENI.HINT' | translate }}" [innerHTML]="r.hodnoceni | star"></span>
 						</div>
@@ -71,14 +71,14 @@
 					<div class="col-12 col-lg-7 order-3 order-lg-2 pl-0 pr-0 row align-items-center">
 						<div class="col text-center">{{ r.efektivniUrok | procentoFormat }}</div>
 						<div class="col text-center"><span [outerHTML]="r.urok | procentoFormat"></span></div>
-						<div class="col text-right"><span [outerHTML]="r.splatka | menaFormat"></span></div>
+						<div class="col pr-0 text-right"><span [outerHTML]="r.splatka | menaFormat"></span></div>
 						<div class="col text-right"><span [outerHTML]="r.urokZeSplatky | menaFormat"></span></div>
 						<div class="col hidden-sm-down text-right"><span [outerHTML]="r.poplatekJednorazovy | menaFormat"></span></div>
-						<div class="col text-right"><span [outerHTML]="r.poplatekMesicni | menaFormat"></span></div>
+						<div class="col hidden-xs text-right"><span [outerHTML]="r.poplatekMesicni | menaFormat"></span></div>
 					</div>								
-					<div class="col-6 col-lg-2 order-2 order-lg-3 pl-0 align-items-center">
+					<div class="col-4 col-sm-5 col-lg-2 order-2 order-lg-3 pl-0 align-items-center">
 						<div class="float-right">
-							<button class="btn btn-sm btn-outline-info mr-2" (click)="nastavSlevy(r); staticTabs.tabs[4].active = true">
+							<button class="btn btn-sm btn-outline-info mr-2 hidden-xs" (click)="nastavSlevy(r); staticTabs.tabs[4].active = true">
 								<span class="hidden-lg-up"><strong>{{ 'FORM.BUTTONS.SLEVA' | translate }}</strong></span>
 								<span class="icon shape-savings1 hidden-md-down"
 									placement="top"
